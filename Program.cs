@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ConsoleApp6
 {
@@ -10,7 +11,7 @@ namespace ConsoleApp6
             // Grayson Lindsay
             string name, name1, last, login,product1 , product2;
             int age, Grade, ID, old,past, years;  
-            double price1, average, Number1, Number2, Number3, number4, Price2 , price3;
+            double price1, average, Number1, Number2, Number3, number4, Price2 , Price3, Price2a, Price2b, Price3a , Price3b, Price4, Price5;
             
 
 
@@ -85,6 +86,40 @@ namespace ConsoleApp6
             product1 = Console.ReadLine();
             Console.WriteLine(" whats the price ");
             double.TryParse(Console.ReadLine(), out Price2);
+            Price2a = Price2 * 0.20;
+            Price2b = Price2 - Price2a;
+            
+            Console.WriteLine(" tell me another product");
+            product2 = Console.ReadLine();
+            Console.WriteLine(" whats the price ");
+            double.TryParse(Console.ReadLine(), out Price3);
+            Price3a = Price3 * 0.20;
+            Price3b = Price3 - Price3a;
+            
+
+            Price4 = Price3b + Price2b;
+            Price5 = Price4 * 1.13;
+            
+            
+
+            Console.WriteLine("sales receipt");
+            Console.WriteLine();
+            Console.WriteLine("Item 1 " + product1);
+            Console.WriteLine();
+            Console.WriteLine(" Costs " + (Price2).ToString("C"));
+            Console.WriteLine();
+            Console.WriteLine(" Item 2 " + product2);
+            Console.WriteLine();
+            Console.WriteLine(" Costs " + (Price3).ToString("C"));
+            Console.WriteLine("==========================");
+            Console.WriteLine();
+            Console.WriteLine(" Discount 20% " + (Price4).ToString("C"));
+            Console.WriteLine();
+            Console.WriteLine("Tax 13%");
+            Console.WriteLine("Total " + (Price5).ToString("C"));
+            Console.WriteLine("==========================");
+
+ 
 
 
 
@@ -116,7 +151,9 @@ namespace ConsoleApp6
 
 
 
-           
+
+
+
 
 
 
